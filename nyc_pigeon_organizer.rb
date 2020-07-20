@@ -4,10 +4,18 @@ def nyc_pigeon_organizer(data)
     data[key1].each do |key2, array| 
       array.select do |name|
         pigeon_list[name] = {}
+      end
+    end
+  end
+  
+  data.each do |key1, key2|
+    data[key1].each do |key2, array|
+      array.select do |name|
         pigeon_list[name][key1] = [key2]
       end
     end
   end
+  
   puts pigeon_list
 end
 
